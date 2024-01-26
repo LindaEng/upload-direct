@@ -22,9 +22,12 @@ git clone https://github.com/yourusername/s3-practice.git
 2. Install the dependencies:
 3. Create a `.env` file in the root directory and fill in your AWS credentials and the name of your S3 bucket:
 
+```bash
 VITE_APP_ACCESS_KEY=youraccesskey VITE_APP_SECRET_KEY=yoursecretkey VITE_APP_BUCKET_NAME=yourbucketname ``` 4. Start the development server:
-
+```
+```bash
 npm run dev
+```
 
 ### Usage
 Open the application in your web browser. Select a file and click the "Upload" button to upload the file to your S3 bucket.
