@@ -13,7 +13,7 @@ function App() {
     e.preventDefault()
     
     // get pre-signed url from backend
-    const response = await axios.get('http://localhost:5000/pre-signed-url', {
+    const response = await axios.get('http://localhost:3000/s3Url', {
       params: {
         'file-name': file.name,
         'file-type': file.type
@@ -21,6 +21,14 @@ function App() {
     })
 
     const { url } = response.data
+    console.log('URL: ', url);
+
+    // upload file to S3
+    const result = await axios.put(url, file, {
+      headers: {
+        'Content-Type': file.type
+      }
+    })
    
   }
 
